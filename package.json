@@ -1,0 +1,23 @@
+{
+  "name": "hoster",
+  "version": "1.0.0",
+  "description": "website hoster",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prabhakarupadhyay/hoster.git"
+  },
+  "author": "marshall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prabhakarupadhyay/hoster/issues"
+  },
+  "homepage": "https://github.com/prabhakarupadhyay/hoster#readme",
+  "dependencies": {
+    "adm-zip": "^0.4.13",
+    "decompress-zip": "^0.2.2"
+  }
+}

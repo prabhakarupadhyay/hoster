@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Website Hosting</title>
+    <h1>Host Your Static Test Website</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>
+        Compress all the files to zip before upload(max size 20MB). Please put
+        index.html file inside zip to get a proper link
+      </p>
+      <form
+        enctype="multipart/form-data"
+        id="myform"
+        action="/uploadZip"
+        method="POST"
+      >
+        Zip:
+        <input
+          type="file"
+          accept="zip,application/octet-stream,application/zip,application/x-zip,application/x-zip-compressed"
+          name="zip"
+          value="upload"
+        /><br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $("#myform").submit(function() {
+          $(this).ajaxSubmit({
+            error: function(xhr) {
+              status("Error: " + xhr.status);
+            },
+            success: function(response) {
+              console.log(response);
+            }
+          });
+          return false;
+        });
+      });
+    </script>
+  </body>
+</html>

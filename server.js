@@ -24,8 +24,11 @@ var myLogger = function(req, res, next) {
 
 var zipStore = multer.diskStorage({
   destination: function(req, file, callback) {
-    var rootPath = "./public/site/" + shortid.generate();
-    fs.mkdir(rootPath, err => callback(err, rootPath));
+    var randId = shortid.generate();
+    var rootPath = "./public/site/" + randId;
+    fs.mkdir(path.join(__dirname, "public", "site", randId), err =>
+      callback(err, rootPath)
+    );
   },
   filename: function(req, file, callback) {
     let OrignalName = file.originalname.split(".")[0];
